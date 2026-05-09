@@ -8,6 +8,10 @@ function RegisterPage() {
         register();
     };
 
+interface LoginPageProps {
+  onToggle: () => void;
+}
+
   return (
     <div className="flex justify-center items-center h-screen ">
         <div className="max-w-lg bg-white shadow-md p-8">
@@ -16,7 +20,12 @@ function RegisterPage() {
 
             <div className="flex mb-6 border-b gap-3">
                 <button className="py-2 text-gray-400 hover text-black-800">Login</button>
-                <button className="py-2 text-gray-400 hover text-black-800">Register</button>
+                 <button
+                onClick={onToggle}
+                className="w-1/2 py-2 text-gray-500 hover:text-blue-600"
+            >
+            Register
+          </button>
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
