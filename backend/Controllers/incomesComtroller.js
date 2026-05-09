@@ -51,7 +51,7 @@ export async function deleteIncome(req, res){
 
         const incomeId = req.params.id;
         const deletedIncome =  await Income.findOneAndDelete({_id: incomeId, owner: userId});
-        if(!deleteIncome){
+        if(!deletedIncome){
             res.status(200).json({message: "Income not found or unauthorized"});
         }
 

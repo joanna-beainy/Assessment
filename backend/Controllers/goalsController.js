@@ -10,7 +10,7 @@ export async function getGoals(req, res){
         return res.status(200).json(goals);
     } catch(error){
         console.log(error);
-        res.status(500).josn({error: "Failed to fetch goals"});
+        res.status(500).json({error: "Failed to fetch goals"});
     }
 }
 

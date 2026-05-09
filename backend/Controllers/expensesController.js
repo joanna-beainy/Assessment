@@ -50,12 +50,12 @@ export async function deleteExpense(req, res){
         if (!userId) return res.status(401).json({ error: "Invalid token/user" });
 
         const expenseId = req.params.id;
-        const deleetdExpense = await Expense.findOneAndDelete({_id: expenseId, owner: userId});
-        if(!deleetdExpense){
+        const deletedExpense = await Expense.findOneAndDelete({_id: expenseId, owner: userId});
+        if(!deletedExpense){
             res.status(404).json({error: "Expense not found or unauthorized"});
         }  
 
-        res.status(200).json({message: "Expense deleted successfully", deleetdExpense});
+        res.status(200).json({message: "Expense deleted successfully", deletedExpense});
     } catch(error){
         console.log(error);
         res.status(500).json({error: "Failed to delete expense"});
